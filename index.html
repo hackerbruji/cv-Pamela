@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- ======================================
+       WEB EN CONSTRUCCIÓN — pamweb.es
+       Archivo: index.html
+       Autor: Pamela Jiménez Pozuelo
+       ====================================== -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Web en construcción — pamweb.es</title>
+  <meta name="description" content="Sitio en construcción. Vuelve pronto.">
+
+  <style>
+    /* ============================
+       TEMA (LILA CLARA)
+       ============================ */
+    :root{
+      --bg: #ffffff;        /* fondo */
+      --text: #241a3b;      /* texto principal (morado muy oscuro) */
+      --muted: #6b6480;     /* texto secundario */
+      --panel: #ffffff;     /* tarjeta central */
+      --border: #eadbfd;    /* borde lavanda suave */
+      --chip: #f8f5ff;      /* badges pastel */
+      --violet: #a855f7;    /* lila principal */
+      --violet-2: #d8b4fe;  /* lila claro */
+      --shadow: 0 8px 28px rgba(168,85,247,.12);
+      --radius: 20px;
+    }
+
+    /* Reset mínimo */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Arial,"Helvetica Neue";
+    }
+    a{color:var(--violet);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Layout centrado */
+    .wrap{
+      min-height:100dvh;            /* pantalla completa */
+      display:grid;
+      place-items:center;           /* centrado vertical+horizontal */
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:720px;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      text-align:center;
+    }
+
+    /* Encabezado */
+    .logo{
+      width:56px;height:56px;border-radius:16px;
+      margin:0 auto 12px auto;
+      display:grid;place-items:center;
+      color:#fff;font-weight:800;
+      background:linear-gradient(135deg,var(--violet),var(--violet-2));
+      box-shadow:0 6px 16px rgba(168,85,247,.28);
+    }
+    h1{font-size:clamp(28px,4vw,40px);margin:.2em 0}
+    .lead{color:var(--muted);margin:0 0 10px}
+
+    /* Barra de progreso "obra" (solo CSS) */
+    .bar{
+      position:relative;
+      height:10px;
+      border-radius:999px;
+      background:#f3e8ff;           /* lila muy claro */
+      border:1px solid var(--border);
+      overflow:hidden;
+      margin:18px auto 8px auto;
+      max-width:520px;
+    }
+    .bar span{
+      position:absolute;inset:0 auto 0 0;
+      width:50%;
+      background:
+        repeating-linear-gradient(45deg,
+          rgba(168,85,247,.9) 0 14px,
+          rgba(216,180,254,.9) 14px 28px);
+      animation:move 1.2s linear infinite;
+    }
+    @keyframes move{
+      from{transform:translateX(-60%)}
+      to  {transform:translateX(110%)}
+    }
+    .hint{font-size:14px;color:var(--muted);margin:0 0 16px}
+
+    /* Botones de acción */
+    .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:12px;
+      border:1px solid var(--border);
+      background:var(--chip);
+      color:inherit;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--violet),var(--violet-2));
+      color:#fff;border-color:transparent;
+    }
+
+    /* Pie */
+    footer{margin-top:18px;color:var(--muted);font-size:14px}
+
+    /* Accesibilidad: reduce movimiento si el usuario lo pide */
+    @media (prefers-reduced-motion: reduce){
+      .bar span{animation:none;transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" aria-labelledby="t-obra">
+      <div class="logo" aria-hidden="true">PJ</div>
+      <h1 id="t-obra">Web en construcción</h1>
+      <p class="lead">Estoy preparando algo bonito y útil. <br>Vuelve pronto 💜</p>
+
+      <!-- Barra de progreso decorativa -->
+      <div class="bar" role="img" aria-label="Trabajando en la web">
+        <span aria-hidden="true"></span>
+      </div>
+      <p class="hint">Última actualización: 2025</p>
+
+      <!-- Acciones -->
+      <div class="actions">
+        <a class="btn primary" href="mailto:info@pamweb.es">✉️ Contacto: info@pamweb.es</a>
+        <a class="btn" href="https://www.linkedin.com/in/pamela-j-b5602755/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a class="btn" href="https://pamweb.es" rel="noopener">🌐 pamweb.es</a>
+      </div>
+
+      <footer>© 2025 Pamela Jiménez Pozuelo</footer>
+    </section>
+  </main>
+</body>
+</html>
